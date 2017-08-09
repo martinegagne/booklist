@@ -6,7 +6,7 @@ class BooksController < ApplicationController
       format.html
       format.text
       format.csv do
-        self.generate_csv(book_list)
+        render plain: Book.generate_csv(@books)
       end
     end
   end
